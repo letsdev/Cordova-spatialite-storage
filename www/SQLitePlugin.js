@@ -36,8 +36,8 @@
     };
 
     nextTick = window.setImmediate || function (fun) {
-            window.setTimeout(fun, 0);
-        };
+        window.setTimeout(fun, 0);
+    };
 
 
     /*
@@ -75,11 +75,9 @@
         this.dbname = dbname;
         this.openSuccess = openSuccess;
         this.openError = openError;
-        this.openSuccess || (this.openSuccess = function () {
-            console.log("DB opened: " + dbname);
-        });
+        this.openSuccess || (this.openSuccess = function () { });
         this.openError || (this.openError = function (e) {
-            console.log(e.message);
+            console.error(e.message);
         });
         this.open(this.openSuccess, this.openError);
     };
@@ -164,14 +162,12 @@
     SQLitePlugin.prototype.open = function (success, error) {
         var openerrorcb, opensuccesscb;
         if (this.dbname in this.openDBs) {
-            console.log('database already open: ' + this.dbname);
             nextTick((function (_this) {
                 return function () {
                     success(_this);
                 };
             })(this));
         } else {
-            console.log('OPEN database: ' + this.dbname);
             opensuccesscb = (function (_this) {
                 return function () {
                     var txLock;
@@ -192,7 +188,6 @@
             })(this);
             openerrorcb = (function (_this) {
                 return function () {
-                    console.log('OPEN database: ' + _this.dbname + ' failed, aborting any pending transactions');
                     if (!!error) {
                         error(newSQLError('Could not open database'));
                     }
@@ -212,7 +207,6 @@
                 error(newSQLError('database cannot be closed while a transaction is in progress'));
                 return;
             }
-            console.log('CLOSE database: ' + this.dbname);
             delete this.openDBs[this.dbname];
             if (txLocks[this.dbname]) {
                 console.log('closing db with transaction queue length: ' + txLocks[this.dbname].queue.length);
@@ -250,6 +244,24 @@
             tx.addStatement(statement, params, mysuccess, myerror);
         };
         this.addTransaction(new SQLitePluginTransaction(this, myfn, null, null, false, false));
+    };
+
+    SQLitePlugin.prototype.executeSqlLocked = function (statement, params, success, error) {
+        var myerror, myfn, mysuccess;
+        mysuccess = function (t, r) {
+            if (!!success) {
+                return success(r);
+            }
+        };
+        myerror = function (t, e) {
+            if (!!error) {
+                return error(e);
+            }
+        };
+        myfn = function (tx) {
+            tx.addStatement(statement, params, mysuccess, myerror);
+        };
+        this.addTransaction(new SQLitePluginTransaction(this, myfn, null, null, true, false));
     };
 
     SQLitePluginTransaction = function (db, fn, error, success, txlock, readOnly) {
@@ -561,7 +573,7 @@
             delete SQLitePlugin.prototype.openDBs[args.path];
             return cordova.exec(success, error, "SQLitePlugin", "delete", [args]);
         },
-        getWebSqlDatabasePath: function(success, error) {
+        getWebSqlDatabasePath: function (success, error) {
             cordova.exec(success, error, "SQLitePlugin", "getWebSqlDatabasePath", []);
         }
     };

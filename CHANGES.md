@@ -1,4 +1,7 @@
 # Changes
+## 1.4.0
+- added executeSqlLocked method
+
 ## 1.3.0
 - added method to determine websql path
 
