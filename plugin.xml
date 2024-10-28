@@ -2,7 +2,7 @@
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="cordova-spatialite-storage"
-    version="1.4.0">
+    version="1.4.1">
 
     <name>Cordova sqlite/spatialite storage plugin</name>
 
@@ -446,7 +446,7 @@
         <header-file src="src/common/geos/triangulate/quadedge/TrianglePredicate.h" target-dir="common/geos/triangulate/quadedge"/>
         <header-file src="src/common/geos/triangulate/quadedge/TriangleVisitor.h" target-dir="common/geos/triangulate/quadedge"/>
         <header-file src="src/common/geos/triangulate/quadedge/Vertex.h" target-dir="common/geos/triangulate/quadedge"/>
-        <header-file src="src/common/geos/util/Assert.h" target-dir="common/geos/util"/>
+        <header-file src="src/common/geos/util/GeosAssert.h" target-dir="common/geos/util"/>
         <header-file src="src/common/geos/util/AssertionFailedException.h" target-dir="common/geos/util"/>
         <header-file src="src/common/geos/util/CoordinateArrayFilter.h" target-dir="common/geos/util"/>
         <header-file src="src/common/geos/util/GeometricShapeFactory.h" target-dir="common/geos/util"/>
@@ -455,7 +455,7 @@
         <header-file src="src/common/geos/util/IllegalStateException.h" target-dir="common/geos/util"/>
         <header-file src="src/common/geos/util/Interrupt.h" target-dir="common/geos/util"/>
         <header-file src="src/common/geos/util/Machine.h" target-dir="common/geos/util"/>
-        <header-file src="src/common/geos/util/math.h" target-dir="common/geos/util"/>
+        <header-file src="src/common/geos/util/geosmath.h" target-dir="common/geos/util"/>
         <header-file src="src/common/geos/util/TopologyException.h" target-dir="common/geos/util"/>
         <header-file src="src/common/geos/util/UniqueCoordinateArrayFilter.h" target-dir="common/geos/util"/>
         <header-file src="src/common/geos/util/UnsupportedOperationException.h" target-dir="common/geos/util"/>
@@ -476,7 +476,7 @@
         <header-file src="src/common/spatialite/gg_structs.h" target-dir="common/spatialite"/>
         <header-file src="src/common/spatialite/gg_wfs.h" target-dir="common/spatialite"/>
         <header-file src="src/common/spatialite/gg_xml.h" target-dir="common/spatialite"/>
-        <header-file src="src/common/spatialite/spatialite.h" target-dir="common/spatialite"/>
+        <header-file src="src/common/spatialite.h" target-dir="common/spatialite"/>
         <header-file src="src/common/spatialite/sqlite.h" target-dir="common/spatialite"/>
 
     </platform>

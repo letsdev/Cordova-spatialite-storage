@@ -45,7 +45,7 @@ namespace Community.CsharpSqlite
     //#include "sqliteInt.h"
     //#include <stdarg.h>
 #if SQLITE_HAVE_ISNAN
-//# include <math.h>
+//# include <geosmath.h>
 #endif
 
 

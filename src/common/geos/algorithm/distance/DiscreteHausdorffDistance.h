@@ -24,7 +24,7 @@
 #include <geos/algorithm/distance/DistanceToPoint.h> // for composition
 #include <geos/util/IllegalArgumentException.h> // for inlines
 #include <geos/geom/Geometry.h> // for inlines
-#include <geos/util/math.h> // for inlines
+#include <geos/util/geosmath.h> // for inlines
 #include <geos/geom/CoordinateFilter.h> // for inheritance
 #include <geos/geom/CoordinateSequenceFilter.h> // for inheritance
 

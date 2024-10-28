@@ -20,7 +20,7 @@
 #define GEOS_NODING_SNAPROUND_HOTPIXEL_INL
 
 #include <geos/noding/snapround/HotPixel.h>
-#include <geos/util/math.h>
+#include <geos/util/geosmath.h>
 #include <geos/geom/Coordinate.h>
 
 namespace geos {

@@ -29,7 +29,7 @@
 //#include <geos/util/CoordinateArrayFilter.h>
 //#include <geos/util/UniqueCoordinateArrayFilter.h>
 #include <geos/util/GeometricShapeFactory.h>
-//#include <geos/util/math.h>
+//#include <geos/util/geosmath.h>
 
 //
 // Private macros definition 

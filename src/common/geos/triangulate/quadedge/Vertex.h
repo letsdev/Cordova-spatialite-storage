@@ -19,7 +19,7 @@
 #ifndef GEOS_TRIANGULATE_QUADEDGE_VERTEX_H
 #define GEOS_TRIANGULATE_QUADEDGE_VERTEX_H
 
-#include <math.h>
+#include <geosmath.h>
 #include <memory>
 
 #include <geos/geom/Coordinate.h>

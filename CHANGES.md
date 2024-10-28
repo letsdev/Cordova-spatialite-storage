@@ -1,4 +1,7 @@
 # Changes
+## 1.4.1
+- added capacitor support
+
 ## 1.4.0
 - added executeSqlLocked method
 

@@ -32,7 +32,7 @@
 #define PROJ_API_H
 
 /* standard inclusions */
-#include <math.h>
+#include <geosmath.h>
 #include <stdlib.h>
 
 #ifdef __cplusplus

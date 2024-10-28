@@ -99,7 +99,7 @@ extern "C"
    // It does leave a version in std.
 #  define ISNAN(x) (std::isnan(x))
 # elif (defined(__sun) || defined(__sun__)) && defined(__SUNPRO_CC)
-#  include <math.h>
+#  include <geosmath.h>
 #  define ISNAN(x) (::isnan(x))
 # endif
 #endif
