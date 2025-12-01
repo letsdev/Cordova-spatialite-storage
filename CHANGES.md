@@ -1,4 +1,7 @@
 # Changes
+## 1.5.0
+- aligned to 16 kb page size
+
 ## 1.4.1
 - added capacitor support
 
