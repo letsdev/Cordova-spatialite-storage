@@ -1,4 +1,9 @@
 # Changes
+## 1.6.0
+- iOS: native libraries rebuilt from source (same versions: SpatiaLite 4.3.0a, GEOS 3.4.2, PROJ 4.8.0, SQLite 3.8.11) and shipped as xcframeworks with device arm64 and simulator arm64/x86_64 slices, so apps build for Apple Silicon simulators; armv7/armv7s/i386 dropped, deployment target iOS 13.0
+- iOS: build script scripts/build-ios-xcframeworks.sh added
+- iOS: Package.swift added and `package="swift"` set on the iOS platform, so cordova-ios 8 and Capacitor projects using Swift Package Manager consume the plugin as a Swift package (including the system libraries iconv, xml2 and c++ that Capacitor otherwise drops); CocoaPods based projects and cordova-ios 7 are unaffected
+
 ## 1.5.0
 - aligned to 8 byte for iOS 26
 

@@ -2,7 +2,7 @@
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="cordova-spatialite-storage"
-    version="1.5.1">
+    version="1.6.0">
 
     <name>Cordova sqlite/spatialite storage plugin</name>
 
@@ -58,7 +58,7 @@
     </platform>
 
     <!-- ios -->
-    <platform name="ios">
+    <platform name="ios" package="swift">
         <config-file target="config.xml" parent="/*">
             <feature name="SQLitePlugin">
                 <param name="ios-package" value="SQLitePlugin" />
@@ -73,11 +73,11 @@
         <header-file src="src/ios/SQLitePlugin.h" />
         <source-file src="src/ios/SQLitePlugin.m" />
 
-        <source-file src="src/ios/native/libgeos.a" framework="true" />
-        <source-file src="src/ios/native/libgeos_c.a" framework="true" />
-        <source-file src="src/ios/native/libproj.a" framework="true" />
-        <source-file src="src/ios/native/libspatialite.a" framework="true" />
-        <source-file src="src/ios/native/libsqlite3.a" framework="true" />
+        <framework src="src/ios/native/libgeos.xcframework" custom="true" embed="false" />
+        <framework src="src/ios/native/libgeos_c.xcframework" custom="true" embed="false" />
+        <framework src="src/ios/native/libproj.xcframework" custom="true" embed="false" />
+        <framework src="src/ios/native/libspatialite.xcframework" custom="true" embed="false" />
+        <framework src="src/ios/native/libsqlite3.xcframework" custom="true" embed="false" />
 
         <!-- GENERATED HEADER INCLUDES -->
         <!-- see GeneratePluginConfigHeaders.py -->
